@@ -1,0 +1,326 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  font-size: 62.5%;
+  --ff-t:'Roboto', sans-serif;
+
+
+
+  --bg-color:#FFFFFF;
+  --bg-color-dark:#121214;
+
+  --bgbton-color: #02799D;
+  --bgbton-color-dark:#0A3442;
+  --bgbtoff-color: #E1E1E6;
+  --bgbtoff-color-dark: #29292E;
+
+  --bt-color: #323238;
+  --bt-color-dark: #C4C4CC;
+
+}
+
+
+
+body{
+  background-color: var(--bg-color);
+  color: var(--bt-color);
+  font-family: var(--ff-t);
+  font-weight: 500;
+  min-height: 100vh;
+  display: grid;
+  
+}
+
+body.dark-mode{
+  background-color: var(--bg-color-dark);
+  color: var(--bg-color)
+}
+
+.dark-mode #Controls button path{
+  fill: var(--bt-color-dark)
+}
+
+
+
+.buttonDarkModeOn.dark-mode{
+  display: none;
+}
+
+.buttonDarkModeOf.dark-mode{
+  display: block;
+}
+
+
+
+main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 17.2rem;
+  height: 100%;
+  width: 100%;
+}
+
+
+button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+#Controls button svg{
+  
+  width: clamp(3.2rem, 1rem + 12vw, 4.6rem);
+}
+
+.hide{
+  display: none;
+}
+
+
+.buttonSoundForest:hover path:nth-of-type(1),
+.buttonSoundRain:hover path:nth-of-type(1),
+.buttonSoundCoffeShop:hover path:nth-of-type(1),
+.buttonSoundFirePlace:hover path:nth-of-type(1){
+
+  fill: var(--bgbton-color);
+  transition: fill 1s ease;
+
+
+}
+
+
+.dark-mode.buttonSoundForest:hover path:nth-of-type(1),
+.dark-mode.buttonSoundRain:hover path:nth-of-type(1),
+.dark-mode.buttonSoundCoffeShop:hover path:nth-of-type(1),
+.dark-mode.buttonSoundFirePlace:hover path:nth-of-type(1){
+
+  fill: var(--bgbton-color-dark);
+  transition: fill 1s ease;
+
+
+}
+
+.dark-mode.buttonSoundForest path:nth-of-type(1),
+.dark-mode.buttonSoundRain path:nth-of-type(1),
+.dark-mode.buttonSoundCoffeShop path:nth-of-type(1),
+.dark-mode.buttonSoundFirePlace path:nth-of-type(1){
+
+  fill: var(--bgbtoff-color-dark);
+
+
+}
+
+.dark-mode.buttonSoundForest path:nth-of-type(2),
+.dark-mode.buttonSoundRain path:nth-of-type(2),
+.dark-mode.buttonSoundCoffeShop path:nth-of-type(2),
+.dark-mode.buttonSoundFirePlace path:nth-of-type(2){
+
+  fill: var( --bt-color-dark)
+
+
+}
+
+
+.buttonSoundForest.active path:nth-of-type(1),
+.buttonSoundRain.active path:nth-of-type(1),
+.buttonSoundCoffeShop.active path:nth-of-type(1),
+.buttonSoundFirePlace.active path:nth-of-type(1){
+
+  fill: var(--bgbton-color);
+
+}
+
+
+
+
+
+.dark-mode.buttonSoundForest.active path:nth-of-type(1),
+.dark-mode.buttonSoundRain.active path:nth-of-type(1),
+.dark-mode.buttonSoundCoffeShop.active path:nth-of-type(1),
+.dark-mode.buttonSoundFirePlace.active path:nth-of-type(1){
+
+  fill: var(--bgbton-color-dark);
+}
+
+
+
+.buttonSoundForest:hover path:nth-of-type(2),
+.buttonSoundRain:hover path:nth-of-type(2),
+.buttonSoundCoffeShop:hover path:nth-of-type(2),
+.buttonSoundFirePlace:hover path:nth-of-type(2){
+  
+  fill: var(--bg-color);
+  
+}
+
+.buttonSoundForest.active path:nth-of-type(2),
+.buttonSoundRain.active path:nth-of-type(2),
+.buttonSoundCoffeShop.active path:nth-of-type(2),
+.buttonSoundFirePlace.active path:nth-of-type(2){
+  fill: var(--bg-color);
+
+}
+
+
+
+
+.buttonSoundForest,
+.buttonSoundRain,
+.buttonSoundCoffeShop,
+.buttonSoundFirePlace{
+  position: relative;
+}
+
+
+ input[type="range"]{
+  -webkit-appearance: none;
+  width: 9.0rem;
+  height: 0.5rem;
+  background: #323238;
+  border-radius: .5rem;
+  margin-top: 13rem;
+  margin-left: -11.5rem;
+  cursor: pointer;
+  position:absolute;
+}
+
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  
+  height:1.2rem;
+  border-radius: .5rem;
+
+  background-color: var(--text-light);
+}
+
+.card-forest:hover input,
+.card-rain:hover input,
+.card-coffe:hover input,
+.card-fire:hover input[type="range"]{
+  background: #FFFFFF;
+}
+
+.card-forest:active input[type="range"]{
+  background-color: #eb0d0d;
+}
+
+
+.card-forest:hover input[type="range"]::-webkit-slider-thumb,
+.card-rain:hover input[type="range"]::-webkit-slider-thumb, 
+.card-coffe:hover input[type="range"]::-webkit-slider-thumb,
+.card-fire:hover input[type="range"]::-webkit-slider-thumb{
+  background-color: #FFFFFF;
+}
+
+
+
+
+
+
+
+.dark-mode input[type="range"]{
+  background: #FFFFFF;
+}
+
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  
+  background-color:  #323238;
+  
+  position: relative;
+  
+}
+ div.active input[type="range"]{
+  background-color: #c70909;
+}
+
+.dark-mode input[type="range"]::-webkit-slider-thumb{
+  background:#FFFFFF;
+}
+
+
+
+.buttonDarkModeOff{
+position: absolute;
+position: fixed;
+top: 6rem;
+right: 6rem;
+}
+
+.buttonDarkModeOn{
+  position: absolute;
+  position: fixed;
+  top: 6rem;
+  right: 6rem;
+}
+
+
+
+
+#Timer{
+  font-size: 12.616rem;
+  display: flex;
+}
+
+#Controls{
+  
+  display: flex;
+  justify-content: center;
+  gap: 4rem;  
+}
+
+#soundsPainel{
+ display: grid;
+ grid-template-areas: "A B"
+ "C D";
+ gap: 2.2rem;
+ align-self: center; 
+
+}
+
+@media (min-width:320px) and (max-width:670px){
+  
+body{
+  display: grid;
+  align-content: center;
+}
+
+
+main{
+  display: block;
+  width: 100%;
+  
+}
+
+
+#Timer{
+  display: flex;
+  justify-content: center;
+}
+
+#container{
+  margin-top: 7rem;
+  
+}
+
+ #soundsPainel{
+  margin-top: 5rem;
+  gap: 16px;
+  justify-content: center;
+ }
+
+ .buttonDarkModeOn, .buttonDarkModeOff{
+  top: 2rem;
+  right: 2rem;
+ }
+}
