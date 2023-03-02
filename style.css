@@ -10,7 +10,7 @@
 
 
 
-  --bg-color:#FFFFFF;
+  --bg-color-white:#FFFFFF;
   --bg-color-dark:#121214;
 
   --bgbton-color: #02799D;
@@ -26,7 +26,7 @@
 
 
 body{
-  background-color: var(--bg-color);
+  background-color: var(--bg-color-white);
   color: var(--bt-color);
   font-family: var(--ff-t);
   font-weight: 500;
@@ -37,7 +37,7 @@ body{
 
 body.dark-mode{
   background-color: var(--bg-color-dark);
-  color: var(--bg-color)
+  color: var(--bg-color-white)
 }
 
 .dark-mode #Controls button path{
@@ -153,7 +153,7 @@ button{
 .buttonSoundCoffeShop:hover path:nth-of-type(2),
 .buttonSoundFirePlace:hover path:nth-of-type(2){
   
-  fill: var(--bg-color);
+  fill: var(--bg-color-white);
   
 }
 
@@ -161,7 +161,7 @@ button{
 .buttonSoundRain.active path:nth-of-type(2),
 .buttonSoundCoffeShop.active path:nth-of-type(2),
 .buttonSoundFirePlace.active path:nth-of-type(2){
-  fill: var(--bg-color);
+  fill: var(--bg-color-white);
 
 }
 
@@ -180,10 +180,10 @@ button{
   -webkit-appearance: none;
   width: 9.0rem;
   height: 0.5rem;
-  background: #323238;
+  background: var(--bt-color);
   border-radius: .5rem;
   margin-top: 13rem;
-  margin-left: -11.5rem;
+  margin-left: -11.4rem;
   cursor: pointer;
   position:absolute;
 }
@@ -202,11 +202,21 @@ input[type="range"]::-webkit-slider-runnable-track {
 .card-rain:hover input,
 .card-coffe:hover input,
 .card-fire:hover input[type="range"]{
-  background: #FFFFFF;
+  background:var(--bg-color-white);
 }
 
-.card-forest:active input[type="range"]{
-  background-color: #eb0d0d;
+.card-forest.active input,
+.card-rain.active input,
+.card-coffe.active input,
+.card-fire.active input[type="range"]{
+  background-color: var(--bg-color-white)
+}
+
+.card-forest.active input[type="range"]::-webkit-slider-thumb,
+.card-rain.active input[type="range"]::-webkit-slider-thumb,
+.card-coffe.active input[type="range"]::-webkit-slider-thumb,
+.card-fire.active input[type="range"]::-webkit-slider-thumb{
+  background-color: var(--bg-color-white)
 }
 
 
@@ -214,7 +224,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 .card-rain:hover input[type="range"]::-webkit-slider-thumb, 
 .card-coffe:hover input[type="range"]::-webkit-slider-thumb,
 .card-fire:hover input[type="range"]::-webkit-slider-thumb{
-  background-color: #FFFFFF;
+  background-color:var(--bg-color-white);
 }
 
 
@@ -224,7 +234,7 @@ input[type="range"]::-webkit-slider-runnable-track {
 
 
 .dark-mode input[type="range"]{
-  background: #FFFFFF;
+  background:var(--bg-color-white);
 }
 
 
@@ -235,17 +245,17 @@ input[type="range"]::-webkit-slider-thumb{
   height: 1.3rem;
   border-radius: 50%;
   
-  background-color:  #323238;
+  background-color: var(--bt-color);
   
   position: relative;
   
 }
  div.active input[type="range"]{
-  background-color: #c70909;
+  background-color: var(--bg-color-white);
 }
 
 .dark-mode input[type="range"]::-webkit-slider-thumb{
-  background:#FFFFFF;
+  background-color:var(--bg-color-white);
 }
 
 
