@@ -29,6 +29,8 @@ const buttonDarkModeOff = document.querySelector('.buttonDarkModeOff')
 const buttonDarkModeOn = document.querySelector('.buttonDarkModeOn')
 const body = document.querySelector('body')
 const controlsButton = document.querySelector("#Controls")
+const volumeButton = document.querySelector('.volume-button');
+
 
 
 
@@ -82,10 +84,17 @@ function ForestStart(){
       SoundForest.loop = true
       buttonSoundForest.classList.add('active')
       
+      cardforest.classList.add('active')
+      cardrain.classList.remove('active')
+      cardcoffe.classList.remove('active')
+      cardfire.classList.remove('active')
 
   } else {
     SoundForest.pause()
     buttonSoundForest.classList.remove('active')
+    cardforest.classList.remove('active')
+   
+
   }
 }
 
@@ -95,24 +104,35 @@ function RainStart(){
     SoundRain.play()
     SoundRain.loop = true
     buttonSoundRain.classList.add('active')
+    cardrain.classList.add('active')
+    cardforest.classList.remove('active')
+    cardcoffe.classList.remove('active')
+    cardfire.classList.remove('active')
 
 } else {
   SoundRain.pause()
   buttonSoundRain.classList.remove('active')
+  cardrain.classList.remove('active')
 
 }
 }
+
 function CoffeShopStart(){
   soundsOff(SoundRain, SoundForest, SoundFirePlace, SoundFirePlace)
   if (SoundCoffeShop.paused){
     SoundCoffeShop.play()
     SoundCoffeShop.loop = true
     buttonSoundCoffeShop.classList.add('active')
+    cardcoffe.classList.add('active')
+    cardforest.classList.remove('active')
+    cardrain.classList.remove('active')
+    cardfire.classList.remove('active')
     
 
 } else {
   SoundCoffeShop.pause()
   buttonSoundCoffeShop.classList.remove('active')
+  cardcoffe.classList.remove('active')
 
 }
 }
@@ -123,10 +143,16 @@ function FirePlaceStart() {
     SoundFirePlace.play()
     SoundFirePlace.loop = true
     buttonSoundFirePlace.classList.add('active')
+    cardfire.classList.add('active')
+    cardforest.classList.remove('active')
+    cardrain.classList.remove('active')
+    cardcoffe.classList.remove('active')
 
 } else {
   SoundFirePlace.pause()
   buttonSoundFirePlace.classList.remove('active')
+  cardfire.classList.remove('active')
+
 
 }
 }
@@ -348,5 +374,3 @@ inputForestVolume.addEventListener('input', buttonSoundForest.setAudioVolume)
 inputRainVolume.addEventListener('input', buttonSoundRain.setAudioVolume)
 inputCoffeShopVolume.addEventListener('input', buttonSoundCoffeShop.setAudioVolume)
 inputFirePlaceVolume.addEventListener('input', buttonSoundFirePlace.setAudioVolume)
-
-
